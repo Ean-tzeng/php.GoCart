@@ -1,0 +1,12 @@
+<?php
+	session_start();
+	unset($_SESSION['user']);
+	unset($_SESSION['psd']);
+	unset($_SESSION['name']);
+	unset($_SESSION['u_id']);
+	setcookie("user","",time()-3600);
+	setcookie("psd","",time()-3600);
+	setcookie("name","",time()-3600);
+	setcookie("u_id","",time()-3600);
+	header("refresh:0;url='http://".$_SESSION['url']."'");
+?>
